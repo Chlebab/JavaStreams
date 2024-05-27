@@ -3,6 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +21,9 @@ public class Main {
         List<Person> peopleOver18 = new ArrayList<>();
 
         peopleOver18 = people.stream()
-                .filter((p) -> p.getAge() >= 18);
+                .filter((p) -> p.getAge() >= 18)
+                .collect(Collectors.toList());
+        
     }
 
 }
